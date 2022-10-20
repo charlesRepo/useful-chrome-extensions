@@ -7,7 +7,7 @@ function checkLastQuarterProjects(q){
   const quarterObject = {q1, q2, q3, q4};
   if(!q){
     const date = new Date();
-    const fullDate = `${date.getFullYear()}/${date.getMonth()}/${date.getDay()}`;
+    const fullDate = `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`;
     const currentTimestamp = new Date(fullDate).getTime();
     for (const [key, value] of Object.entries(quarterObject)) {
       const quarterEndTimestamp = new Date(value.end).getTime();

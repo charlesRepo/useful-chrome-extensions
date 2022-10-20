@@ -7,7 +7,7 @@ function getCurrentQuarter(){
   const quarterObject = {q1, q2, q3, q4};
 
   const date = new Date();
-  const fullDate = `${date.getFullYear()}/${date.getMonth()}/${date.getDay()}`;
+  const fullDate = `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`;
   const currentTimestamp = new Date(fullDate).getTime();
   const quarterMap = {
     q1: 'First Quarter',

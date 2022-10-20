@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Ticket Branch Name Generator",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "jira.png"
+  },
+  "content_scripts": [{
+    "matches": ["https://jira.atlightspeed.net/browse/MW-*"],
+    "js": ["contentScript.js"]
+  }],
+  "permissions": ["activeTab"]
+}
