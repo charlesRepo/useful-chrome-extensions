@@ -5,6 +5,11 @@
   "version": "1.0",
   "action": {
     "default_popup": "index.html",
-    "default_icon": "jira.png"
+    "default_icon": "Q_.png"
+  },
+  "icons": {
+    "16": "q_16.png",
+    "48": "q_48.png",
+    "128": "q_128.png"
   }
 }

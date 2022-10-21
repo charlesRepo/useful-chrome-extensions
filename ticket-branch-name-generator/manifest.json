@@ -5,10 +5,15 @@
   "version": "1.0",
   "action": {
     "default_popup": "index.html",
-    "default_icon": "jira.png"
+    "default_icon": "PR.png"
+  },
+  "icons": {
+    "16": "pr_16.png",
+    "48": "pr_48.png",
+    "128": "pr_128.png"
   },
   "content_scripts": [{
-    "matches": ["https://jira.atlightspeed.net/browse/MW-*"],
+    "matches": ["https://jira.atlightspeed.net/*"],
     "js": ["contentScript.js"]
   }],
   "permissions": ["activeTab"]

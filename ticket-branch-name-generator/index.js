@@ -4,11 +4,11 @@ selection.addEventListener('change', function(e){
   taskType = e.currentTarget.options[e.currentTarget.selectedIndex].value;
 })
 
-console.log(taskType);
 const button = document.querySelector('[data-button-generator]');
 const output = document.querySelector('[data-text-output]');
 const copyToClipboard = document.querySelector('[data-button-copy]');
 copyToClipboard.style.display = 'none';
+output.style.display = 'none';
 
 button.addEventListener('click', fetchData);
 
@@ -22,6 +22,7 @@ copyToClipboard.addEventListener('click', function(){
 
 document.addEventListener('textGenerated', function(){
   copyToClipboard.style.display = 'block';
+  output.style.display = 'block';
 })
 
 document.addEventListener('textCopied', function(){

@@ -1,12 +1,20 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.event === "fetchData") {
-      const ticketTitle = document.querySelector("h1#summary-val");
-      const URI = window.location.pathname;
-      const isTicketURI = URI.match(/^\/browse\/MW-\d{1,10}$/g)
-      const ticketNumber = isTicketURI ? URI.split('/')[2]:'';
-      if(ticketTitle && ticketNumber)
-       sendResponse(JSON.stringify(`${ticketNumber}-${ticketTitle.innerText}` ));
+      const sidePageTicketNumber = document.querySelector('#issuekey-val > a');
+      const isTicketURI = window.location.pathname.match(/^\/browse\/MW-\d{1,10}$/g);
+      const isSidePageURI = window.location.search.includes('projectKey=MW&view=detail');
+      const ticketTitle = document.querySelector("#summary-val")?.innerText;
+
+      let ticketNumber = ''
+      isTicketURI && (ticketNumber = window.location.pathname.split('/')[2]);
+      isSidePageURI && (ticketNumber = sidePageTicketNumber?.innerText);
+
+      console.log(ticketNumber);
+
+      if(ticketTitle && ticketNumber){
+        sendResponse(JSON.stringify(`${ticketNumber}-${ticketTitle}`));
+      }
     }
   }
 );
