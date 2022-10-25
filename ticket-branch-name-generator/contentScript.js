@@ -10,8 +10,6 @@ chrome.runtime.onMessage.addListener(
       isTicketURI && (ticketNumber = window.location.pathname.split('/')[2]);
       isSidePageURI && (ticketNumber = sidePageTicketNumber?.innerText);
 
-      console.log(ticketNumber);
-
       if(ticketTitle && ticketNumber){
         sendResponse(JSON.stringify(`${ticketNumber}-${ticketTitle}`));
       }
