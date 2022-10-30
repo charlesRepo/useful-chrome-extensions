@@ -34,7 +34,7 @@ function fetchData(){
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
     chrome.tabs.sendMessage(tabs[0].id, {event: "fetchData"}, (response) => {
       if(response){
-        const formattedText = `${taskType}/${JSON.parse(response.replace(/\s/g, '-').toLowerCase())}`;
+        const formattedText = `${taskType}/${JSON.parse(response.replace(/\s|:/g, '-').toLowerCase())}`;
         output.innerHTML = `<h3>${formattedText}</h3>`;
         const textIsGenerated = new Event('textGenerated');
         document.dispatchEvent(textIsGenerated);
