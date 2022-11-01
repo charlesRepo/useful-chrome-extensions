@@ -50,9 +50,23 @@ const firstQuarterMonthArray = [0];
 const secondQuarterMonthArray = [0];
 const thirdQuarterMonthArray = [0];
 
+
 if(currentQuarterStartMonth === currentMonth) firstQuarterMonthArray.push(currentDay);
+if(currentQuarterStartMonth < currentMonth) firstQuarterMonthArray.push(daysInFirstQuarterMonth);
+
 if((currentQuarterStartMonth)+1 === currentMonth) secondQuarterMonthArray.push(currentDay);
+if((currentQuarterStartMonth)+1 < currentMonth){
+  firstQuarterMonthArray.push(daysInFirstQuarterMonth);
+  secondQuarterMonthArray.push(daysInSecondQuarterMonth);
+}
+
 if(((currentQuarterStartMonth)+1)+1 === currentMonth) thirdQuarterMonthArray.push(currentDay);
+if(((currentQuarterStartMonth)+1)+1 < currentMonth){
+  firstQuarterMonthArray.push(daysInFirstQuarterMonth);
+  secondQuarterMonthArray.push(daysInSecondQuarterMonth);
+  thirdQuarterMonthArray.push(daysInThirdQuarterMonth);
+}
+
 
 const daysInCurrentQuarter = daysInFirstQuarterMonth + daysInSecondQuarterMonth + daysInThirdQuarterMonth
 
