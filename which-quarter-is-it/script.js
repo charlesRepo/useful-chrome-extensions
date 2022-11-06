@@ -72,9 +72,9 @@ const daysInCurrentQuarter = daysInFirstQuarterMonth + daysInSecondQuarterMonth 
 
 const remainingDaysTillEndOfQuarter =
   daysInCurrentQuarter
-  - (daysInFirstQuarterMonth - (daysInFirstQuarterMonth - firstQuarterMonthArray[firstQuarterMonthArray.length - 1]))
+  - ((daysInFirstQuarterMonth - (daysInFirstQuarterMonth - firstQuarterMonthArray[firstQuarterMonthArray.length - 1]))
   + (daysInSecondQuarterMonth - (daysInSecondQuarterMonth - secondQuarterMonthArray[secondQuarterMonthArray.length - 1]))
-  + (daysInThirdQuarterMonth - (daysInThirdQuarterMonth - thirdQuarterMonthArray[thirdQuarterMonthArray.length - 1]));
+  + (daysInThirdQuarterMonth - (daysInThirdQuarterMonth - thirdQuarterMonthArray[thirdQuarterMonthArray.length - 1])));
 
 
 const textEl = document.querySelector('[data-text]');
